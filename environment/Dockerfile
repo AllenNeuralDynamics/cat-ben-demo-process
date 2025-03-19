@@ -1,4 +1,4 @@
-# hash:sha256:59962f535c9c63a7994d0ca36fe20e3dbc038e0195f5e734040ee47786c57ba0
+# hash:sha256:0af3bbfaed8d84cc14eb9d767037ca59f37efbccf144890e4b74e12c1bf30924
 ARG REGISTRY_HOST
 FROM $REGISTRY_HOST/codeocean/mambaforge3:23.1.0-4-python3.10.12-ubuntu22.04
 
@@ -14,8 +14,5 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install -U --no-cache-dir \
-    aind-data-schema-models==0.5.7 \
-    code-ocean-aux-tools==1.1.3 \
-    hdmf==3.14.6 \
-    scikit-learn==1.5.2 \
-    -e git+https://github.com/AllenInstitute/dynamic_routing_analysis@5c065515d21f4d87910194b642469b865894b07b#egg=dynamic-routing-analysis
+    polars[plot]==1.25.2 \
+    pydantic-settings==2.8.1

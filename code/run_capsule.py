@@ -11,22 +11,14 @@ import typing
 import uuid
 from typing import Any, Literal
 
-# 3rd-party imports necessary for processing ----------------------- #
-import numpy as np
-import numpy.typing as npt
-import pandas as pd
-import matplotlib
-import matplotlib.pyplot as plt
-import sklearn
-import pynwb
-import upath
-import zarr
-import xarray as xr
+# 3rd-party imports ------------------------ ----------------------- #
+import polars as pl
+import pydantic
+import pydantic_settings
+import pydantic_settings.sources
 
+# local modules ---------------------------------------------------- #
 import utils
-import models
-import glm_utils
-
 
 # logging configuration -------------------------------------------- #
 # use `logger.info(msg)` instead of `print(msg)` so we get timestamps and origin of log messages
@@ -107,11 +99,8 @@ def main():
     utils.setup_logging()
 
     # get arguments passed from command line or "AppBuilder" interface:
-    params = CapsuleParameters() 
-    logger.setLevel(params.logging_level)
-
-    if params.test:
-        params = CapsuleParameters(n_units=1) # anything passed to init will override values from json/CLI
+    params = CapsuleParameters()  # anything passed to init will override values from json/CLI
+    logger.setLevel(params.logging_level)        
 
     process(params)
 

@@ -3,6 +3,31 @@
 	"named_parameters": true,
 	"parameters": [
 		{
+			"id": "6s3gpwPmnTiPs0gU",
+			"name": "session_id",
+			"param_name": "session_id",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "750329_2024-11-26"
+		},
+		{
+			"id": "SZZqhyOKsl9Ct2Nu",
+			"name": "area",
+			"param_name": "area",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "VISp"
+		},
+		{
+			"id": "CKVquiTjW2bADhJp",
+			"name": "n_units",
+			"param_name": "n_units",
+			"description": "Number of units to include in analysis",
+			"type": "text",
+			"value_type": "integer",
+			"default_value": "10"
+		},
+		{
 			"id": "HzuW2S8dqcVV1ML7",
 			"name": "logging_level",
 			"param_name": "logging_level",
@@ -20,15 +45,6 @@
 			"value_type": "integer",
 			"default_value": "1",
 			"maximum": 1
-		},
-		{
-			"id": "CKVquiTjW2bADhJp",
-			"name": "n_units",
-			"param_name": "n_units",
-			"description": "Number of units to include in analysis",
-			"type": "text",
-			"value_type": "integer",
-			"default_value": "0"
 		}
 	]
 }
