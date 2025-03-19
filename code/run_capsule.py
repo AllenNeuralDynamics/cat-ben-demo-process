@@ -70,11 +70,12 @@ def process(params: CapsuleParameters) -> None:
     logger.info(f"Processing {params!r}")
 
     chart = (
-        utils.get_df('units')
+        utils.get_df('units', lazy=True)
         .filter(
             pl.col('session_id') == params.session_id,
             pl.col('structure') == params.area,
         )
+        .collect()
         .sample(params.n_units)
         .sort('activity_drift')
         .plot
