@@ -1,6 +1,5 @@
 metadata_version: 1
-name: dynamicrouting-encoding-fit
-description: Basic structure of a capsule to be customized as needed.
+name: cat-demo-processing
+description: Basic structure of a capsule for processing, with input from the app-panel or from a parameter file.
 authors:
 - name: Ben Hardcastle
-- name: Shailaja Akella

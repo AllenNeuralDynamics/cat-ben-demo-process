@@ -22,23 +22,13 @@
 			"maximum": 1
 		},
 		{
-			"id": "P5tTZI1ybbvI3uxI",
-			"name": "update_packages_from_source",
-			"param_name": "update_packages_from_source",
-			"description": "If 1, auto-updates package(s) (e.g. dynamic-routing-analysis) on each run. Disable for quicker testing",
+			"id": "CKVquiTjW2bADhJp",
+			"name": "n_units",
+			"param_name": "n_units",
+			"description": "Number of units to include in analysis",
 			"type": "text",
 			"value_type": "integer",
-			"default_value": "0",
-			"maximum": 1
-		},
-		{
-			"id": "At3zc84Aj5tQRaAC",
-			"name": "override_params_json",
-			"param_name": "override_params_json",
-			"description": "A json string of parameters to pass to Params class. Keys must be fields on Params class. Overrides values specified individually in App Builder",
-			"type": "text",
-			"value_type": "string",
-			"default_value": "{}"
+			"default_value": "0"
 		}
 	]
 }
