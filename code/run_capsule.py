@@ -50,7 +50,7 @@ class CapsuleParameters(pydantic_settings.BaseSettings):
         # the order of the sources is what defines the priority:
         # - first source is highest priority
         # - for each field in the class, the first source that contains a value will be used
-        json_file = next(pathlib.Path('/data/parameters').glob('*_input_parameters*.json'), None)
+        json_file = next(pathlib.Path('/data').rglob('*input_parameters*.json'), None)
         if json_file is not None:
             logger.info(f"Using parameters file: {json_file}") 
         else:
