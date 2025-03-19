@@ -52,7 +52,7 @@ class CapsuleParameters(pydantic_settings.BaseSettings):
         # - for each field in the class, the first source that contains a value will be used
         return (
             init_settings,
-            pydantic_settings.sources.JsonConfigSettingsSource(settings_cls, json_file=next(pathlib.Path('/data').rglob('_input_parameters*.json'), None) or "parameters.json"),
+            pydantic_settings.sources.JsonConfigSettingsSource(settings_cls, json_file=next(pathlib.Path('/data/parameters').glob('*_input_parameters*.json'), None)),
             pydantic_settings.CliSettingsSource(settings_cls, cli_parse_args=True),
         )
 
