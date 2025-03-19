@@ -109,7 +109,8 @@ def main():
         params = CapsuleParameters()  # anything passed to init will override values from json/CLI
     except ValueError:
         logger.info("Missing parameters from app panel or parameters file - exiting")
-        utils.ensure_nonempty_results_dirs(['/results'])
+        utils.ensure_nonempty_results_dirs(['/results', '/results/outputs'])
+        time.sleep(1)
         exit()
 
     logger.setLevel(params.logging_level)
