@@ -87,7 +87,7 @@ def process(params: CapsuleParameters) -> None:
     )
 
     pipeline_suffix = f"_{utils.AWS_BATCH_JOB_ID.split('-')[0]}" if utils.is_pipeline() else ""
-    output_path = pathlib.Path(f"/results/{params.session_id}{pipeline_suffix}.html")
+    output_path = pathlib.Path(f"/results/outputs/{params.session_id}{pipeline_suffix}.html")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     logger.info(f"Writing results to {output_path}")
     chart.save(output_path)
@@ -105,7 +105,7 @@ def main():
 
     process(params)
 
-    utils.ensure_nonempty_results_dirs('/results')
+    utils.ensure_nonempty_results_dirs(['/results', '/results/outputs'])
     logger.info(f"Time elapsed: {time.time() - t0:.2f} s")
 
 if __name__ == "__main__":
