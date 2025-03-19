@@ -7,16 +7,14 @@
 			"name": "session_id",
 			"param_name": "session_id",
 			"type": "text",
-			"value_type": "string",
-			"default_value": "750329_2024-11-26"
+			"value_type": "string"
 		},
 		{
 			"id": "SZZqhyOKsl9Ct2Nu",
 			"name": "area",
 			"param_name": "area",
 			"type": "text",
-			"value_type": "string",
-			"default_value": "VISp"
+			"value_type": "string"
 		},
 		{
 			"id": "CKVquiTjW2bADhJp",
@@ -24,8 +22,7 @@
 			"param_name": "n_units",
 			"description": "Number of units to include in analysis",
 			"type": "text",
-			"value_type": "integer",
-			"default_value": "10"
+			"value_type": "integer"
 		},
 		{
 			"id": "HzuW2S8dqcVV1ML7",

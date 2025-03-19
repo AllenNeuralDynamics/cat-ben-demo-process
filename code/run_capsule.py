@@ -105,8 +105,14 @@ def main():
     utils.setup_logging()
 
     # get arguments passed from command line or "AppBuilder" interface:
-    params = CapsuleParameters()  # anything passed to init will override values from json/CLI
-    logger.setLevel(params.logging_level)        
+    try:
+        params = CapsuleParameters()  # anything passed to init will override values from json/CLI
+    except ValueError:
+        logger.info("Missing parameters from app panel or parameters file - exiting")
+        utils.ensure_nonempty_results_dirs(['/results', '/results/outputs'])
+        exit()
+
+    logger.setLevel(params.logging_level)
 
     process(params)
 
