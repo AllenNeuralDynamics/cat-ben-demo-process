@@ -67,7 +67,7 @@ class CapsuleParameters(pydantic_settings.BaseSettings):
 def process(params: CapsuleParameters) -> None:
 
     """Process a single session with parameters defined in `params` and save results + params to
-    /results.
+    /results/outputs.
     
     A test mode should be implemented to allow for quick testing of the capsule (required every time
     a change is made if the capsule is in a pipeline) 
@@ -92,7 +92,7 @@ def process(params: CapsuleParameters) -> None:
     )
 
     pipeline_suffix = f"_{utils.AWS_BATCH_JOB_ID.split('-')[0]}" if utils.is_pipeline() else ""
-    output_path = pathlib.Path(f"/results/{params.session_id}{pipeline_suffix}.html")
+    output_path = pathlib.Path(f"/results/outputs/{params.session_id}{pipeline_suffix}.html")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     logger.info(f"Writing results to {output_path}")
     chart.save(output_path)
